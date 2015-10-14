@@ -33,8 +33,22 @@ function init() {
     event.preventDefault();
   }, true);
 
-  switcherButton.addEventListener('contextmenu', function (event) {
-    addon.port.emit('right-click');
+
+  var resetButton = document.getElementById('resetButton');
+
+  resetButton.addEventListener('click', function (event) {
+    if (window.confirm('Do you really want to reset the DPI to default value?')) {
+        addon.port.emit('reset-to-browser-default');
+        toggleActivation(false);
+    }
+    event.preventDefault();
+  }, true);
+
+
+  var promptButton = document.getElementById('promptForDPI');
+
+  promptButton.addEventListener('click', function (event) {
+    addon.port.emit('prompt-for-custom-dpi');
     event.preventDefault();
   }, true);
 }
@@ -44,14 +58,6 @@ function isPositiveInteger(value) {
 }
 
 function toggleActivation(activated) {
-  var iconDeactivated = document.getElementById('iconDeactivated');
-  var iconActivated = document.getElementById('iconActivated');
-
-  if (activated) {
-    iconDeactivated.style.display = 'none';
-    iconActivated.style.display = 'block';
-  } else {
-    iconDeactivated.style.display = 'block';
-    iconActivated.style.display = 'none';
-  }
+  var switcherButton = document.getElementById('switcherButton');
+  switcherButton.checked = activated;
 }
