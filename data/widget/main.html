@@ -4,10 +4,16 @@
         <link rel="stylesheet" type="text/css" href="css/widget.css" />
     </head>
     <body onLoad="init()">
-        <a href="#" id="switcherButton">
-            <img src="images/icon-activated.png" id="iconActivated" class="button-widget">
-            <img src="images/icon-deactivated.png" id="iconDeactivated" class="button-widget">
-        </a>
+        <div class="flipswitch">
+            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="switcherButton" checked>
+            <label class="flipswitch-label" for="switcherButton">
+                <div class="flipswitch-inner"></div>
+                <div class="flipswitch-switch"></div>
+            </label>
+        </div>
+        <hr />
+        <button id="promptForDPI">Custom DPI</button>
+        <button id="resetButton">Reset Default</button>
         <script src="js/main.js"></script>
     </body>
 </html>
