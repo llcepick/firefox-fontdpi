@@ -1,10 +1,11 @@
 {
   "name": "fontdpi",
   "fullName": "fontdpi",
-  "id": "jid1-4ZzxC2kiN3rzJA",
   "description": "A widget to change firefox font display size to match system DPI. Left-click the widget to toggle the DPI preset. Right click to set new DPI preset",
+  "main": "lib/main.js",
   "author": "Nguyen Duc Hoa",
   "license": "MPL 2.0",
-  "version": "0.1",
+  "version": "0.2.0",
+  "id": "jid1-4ZzxC2kiN3rzJA@jetpack",
   "homepage": "https://github.com/saikocat/firefox-fontdpi"
 }
